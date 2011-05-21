@@ -189,9 +189,9 @@
     <module name="MultipleVariableDeclarations">
       <property name="severity" value="warning"/>
     </module>
-    <module name="NestedForDepth">
+    <!--module name="NestedForDepth">
       <property name="severity" value="warning"/>
-    </module>
+    </module-->
     <module name="NestedIfDepth">
       <property name="severity" value="warning"/>
       <property name="max" value="2"/>
