@@ -6,7 +6,6 @@
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
     <version>1.398</version>
-    <relativePath>../pom.xml</relativePath>
   </parent>
 
   <groupId>org.arachna.netweaver</groupId>
