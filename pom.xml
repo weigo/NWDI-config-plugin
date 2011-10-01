@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>1.398</version>
+    <version>1.421</version>
   </parent>
 
   <groupId>org.arachna.netweaver</groupId>
   <artifactId>NWDI-config-plugin</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>NWDI-config-plugin</name>
   <description>Provides configuration files for maven plugins analyzing the java source code of the family of Jenkins plugins integrating the SAP NetWeaver development infrastructure into Jenkins.</description>
 
