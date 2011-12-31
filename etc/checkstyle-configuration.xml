@@ -5,13 +5,12 @@
     This configuration file was written by the eclipse-cs plugin configuration editor
 -->
 <!--
-    Checkstyle-Configuration: GISA Coding standards
+    Checkstyle-Configuration: GISA Checkstyle
     Description: none
 -->
 <module name="Checker">
   <property name="severity" value="warning"/>
   <module name="TreeWalker">
-    <property name="cacheFile" value="target/cachefile"/>
     <module name="AvoidStarImport"/>
     <module name="ConstantName">
       <property name="format" value="^[A-Z](_?[A-Z0-9]+)*$|log"/>
@@ -23,14 +22,19 @@
       <property name="tokens" value="ASSIGN, BAND_ASSIGN, BOR_ASSIGN, BSR_ASSIGN, BXOR_ASSIGN, DIV_ASSIGN, MINUS_ASSIGN, MOD_ASSIGN, PLUS_ASSIGN, SL_ASSIGN, SR_ASSIGN, STAR_ASSIGN"/>
     </module>
     <module name="InterfaceIsType"/>
-    <module name="LeftCurly"/>
+    <module name="LeftCurly">
+      <property name="severity" value="ignore"/>
+      <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
+    </module>
     <module name="LocalFinalVariableName"/>
     <module name="LocalVariableName"/>
     <module name="MethodName"/>
     <module name="PackageName"/>
     <module name="RightCurly">
+      <property name="severity" value="ignore"/>
       <property name="option" value="alone"/>
       <property name="tokens" value="LITERAL_TRY,LITERAL_CATCH,LITERAL_ELSE"/>
+      <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
     </module>
     <module name="StaticVariableName"/>
     <module name="TypeName">
@@ -60,14 +64,15 @@
       <property name="severity" value="ignore"/>
       <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
     </module>
-    <module name="MissingSwitchDefault"/>
     <module name="PackageDeclaration"/>
     <module name="RedundantThrows"/>
     <module name="RequireThis">
       <property name="severity" value="ignore"/>
       <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
     </module>
-    <module name="SimplifyBooleanReturn"/>
+    <module name="SimplifyBooleanReturn">
+      <property name="severity" value="error"/>
+    </module>
     <module name="StringLiteralEquality"/>
     <module name="SuperClone"/>
     <module name="SuperFinalize"/>
@@ -80,15 +85,19 @@
       <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
     </module>
     <module name="DescendantToken"/>
-    <module name="Indentation"/>
+    <module name="Indentation">
+      <property name="severity" value="ignore"/>
+      <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
+    </module>
     <module name="TrailingComment"/>
     <module name="UncommentedMain"/>
     <module name="UpperEll"/>
     <module name="Regexp"/>
     <module name="ClassDataAbstractionCoupling"/>
     <module name="ClassFanOutComplexity"/>
-    <module name="JavaNCSS"/>
-    <module name="NPathComplexity"/>
+    <module name="NPathComplexity">
+      <property name="severity" value="error"/>
+    </module>
     <module name="ModifierOrder"/>
     <module name="RedundantModifier"/>
     <module name="GenericWhitespace"/>
@@ -107,6 +116,7 @@
       <property name="tokens" value="COMMA,SEMI"/>
     </module>
     <module name="JavadocMethod">
+      <property name="allowMissingPropertyJavadoc" value="true"/>
       <property name="suppressLoadErrors" value="true"/>
     </module>
     <module name="JavadocStyle"/>
@@ -131,10 +141,12 @@
       <property name="severity" value="error"/>
     </module>
     <module name="AvoidNestedBlocks">
-      <property name="severity" value="warning"/>
+      <property name="severity" value="error"/>
+      <property name="allowInSwitchCase" value="true"/>
     </module>
     <module name="EmptyBlock">
-      <property name="severity" value="warning"/>
+      <property name="severity" value="error"/>
+      <property name="tokens" value="LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_IF,LITERAL_FOR,LITERAL_TRY,LITERAL_WHILE,STATIC_INIT"/>
     </module>
     <module name="NeedBraces">
       <property name="severity" value="warning"/>
@@ -149,10 +161,7 @@
       <property name="severity" value="warning"/>
     </module>
     <module name="EqualsAvoidNull">
-      <property name="severity" value="warning"/>
-    </module>
-    <module name="EqualsHashCode">
-      <property name="severity" value="warning"/>
+      <property name="severity" value="error"/>
     </module>
     <module name="ExplicitInitialization">
       <property name="severity" value="warning"/>
@@ -166,13 +175,14 @@
     </module>
     <module name="IllegalInstantiation"/>
     <module name="IllegalCatch">
-      <property name="severity" value="warning"/>
+      <property name="severity" value="error"/>
     </module>
     <module name="IllegalThrows">
       <property name="severity" value="warning"/>
     </module>
     <module name="IllegalToken">
-      <property name="tokens" value="POST_INC,POST_DEC,LITERAL_SWITCH"/>
+      <property name="severity" value="ignore"/>
+      <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
     </module>
     <module name="JUnitTestCase">
       <property name="severity" value="error"/>
@@ -181,51 +191,42 @@
       <property name="severity" value="warning"/>
     </module>
     <module name="ModifiedControlVariable">
-      <property name="severity" value="warning"/>
+      <property name="severity" value="error"/>
     </module>
     <module name="MultipleStringLiterals">
       <property name="severity" value="warning"/>
     </module>
     <module name="MultipleVariableDeclarations">
-      <property name="severity" value="warning"/>
+      <property name="severity" value="error"/>
     </module>
-    <!--module name="NestedForDepth">
-      <property name="severity" value="warning"/>
-    </module-->
+    <module name="NestedForDepth">
+      <property name="severity" value="error"/>
+    </module>
     <module name="NestedIfDepth">
-      <property name="severity" value="warning"/>
+      <property name="severity" value="error"/>
       <property name="max" value="2"/>
     </module>
     <module name="NestedTryDepth">
-      <property name="severity" value="warning"/>
+      <property name="severity" value="error"/>
       <property name="max" value="2"/>
     </module>
     <module name="ParameterAssignment">
       <property name="severity" value="error"/>
     </module>
-    <module name="ReturnCount">
-      <property name="severity" value="warning"/>
-    </module>
     <module name="SimplifyBooleanExpression">
-      <property name="severity" value="warning"/>
-    </module>
-    <module name="SimplifyBooleanReturn">
-      <property name="severity" value="warning"/>
+      <property name="severity" value="error"/>
     </module>
     <module name="UnnecessaryParentheses">
       <property name="severity" value="warning"/>
     </module>
     <module name="BooleanExpressionComplexity">
-      <property name="severity" value="warning"/>
+      <property name="severity" value="error"/>
     </module>
     <module name="CyclomaticComplexity">
-      <property name="severity" value="warning"/>
+      <property name="severity" value="error"/>
     </module>
     <module name="JavaNCSS">
-      <property name="severity" value="warning"/>
-    </module>
-    <module name="NPathComplexity">
-      <property name="severity" value="warning"/>
+      <property name="severity" value="error"/>
     </module>
     <module name="TodoComment">
       <property name="severity" value="warning"/>
@@ -233,6 +234,22 @@
     <module name="FinalParameters">
       <property name="severity" value="ignore"/>
       <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
+    </module>
+    <module name="EqualsHashCode">
+      <property name="severity" value="error"/>
+    </module>
+    <module name="ReturnCount">
+      <property name="severity" value="error"/>
+    </module>
+    <module name="MissingSwitchDefault">
+      <property name="severity" value="error"/>
+    </module>
+    <module name="IllegalToken">
+      <property name="tokens" value="LITERAL_SWITCH"/>
+    </module>
+    <module name="IllegalType">
+      <property name="tokens" value="METHOD_DEF,PARAMETER_DEF,VARIABLE_DEF"/>
+      <property name="legalAbstractClassNames" value="Abstract(Project|Build)"/>
     </module>
   </module>
   <module name="NewlineAtEndOfFile">
