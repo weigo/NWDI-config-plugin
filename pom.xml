@@ -10,7 +10,7 @@
 
   <groupId>org.arachna.netweaver</groupId>
   <artifactId>NWDI-config-plugin</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <name>NWDI-config-plugin</name>
   <description>Provides configuration files for maven plugins analyzing the java source code of the family of Jenkins plugins integrating the SAP NetWeaver development infrastructure into Jenkins.</description>
 
