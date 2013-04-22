@@ -5,7 +5,7 @@
     This configuration file was written by the eclipse-cs plugin configuration editor
 -->
 <!--
-    Checkstyle-Configuration: GISA Checkstyle
+    Checkstyle-Configuration: GISA Coding standards
     Description: none
 -->
 <module name="Checker">
@@ -16,7 +16,6 @@
     <module name="ConstantName">
       <property name="format" value="^[A-Z](_?[A-Z0-9]+)*$|log"/>
     </module>
-    <module name="DoubleCheckedLocking"/>
     <module name="FinalClass"/>
     <module name="HideUtilityClassConstructor"/>
     <module name="InnerAssignment">
@@ -121,7 +120,6 @@
       <property name="suppressLoadErrors" value="true"/>
     </module>
     <module name="JavadocStyle"/>
-    <module name="JavadocType"/>
     <module name="JavadocVariable"/>
     <module name="WriteTag"/>
     <module name="RedundantImport">
@@ -252,13 +250,19 @@
       <property name="tokens" value="METHOD_DEF,PARAMETER_DEF,VARIABLE_DEF"/>
       <property name="legalAbstractClassNames" value="Abstract(Project|Build)"/>
     </module>
+    <module name="JavadocType">
+      <property name="allowUnknownTags" value="true"/>
+    </module>
   </module>
   <module name="NewlineAtEndOfFile">
     <property name="severity" value="ignore"/>
     <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
   </module>
   <module name="Translation"/>
-  <module name="StrictDuplicateCode"/>
+  <module name="StrictDuplicateCode">
+    <property name="severity" value="ignore"/>
+    <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
+  </module>
   <module name="FileTabCharacter"/>
   <module name="JavadocPackage"/>
   <module name="SuppressionCommentFilter">
