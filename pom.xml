@@ -23,6 +23,7 @@
   <scm>
     <connection>scm:git:git://github.com/weigo/NWDI-config-plugin.git</connection>
     <developerConnection>scm:git:git@github.com:weigo/NWDI-config-plugin.git</developerConnection>
+    <url>https://github.com/weigo/NWDI-config-Plugin</url>
   </scm>
 
   <build>
@@ -159,4 +160,6 @@
       <url>${distributionManagement.snapshots.url}</url>
     </snapshotRepository>
   </distributionManagement>
+  <url>http://github.com/weigo/NWDI-config-Plugin.git</url>
+  <inceptionYear>2011</inceptionYear>
 </project>
