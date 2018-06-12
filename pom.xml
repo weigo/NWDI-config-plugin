@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>1.509</version>
+    <version>3.12</version>
   </parent>
 
   <groupId>org.arachna.netweaver</groupId>
   <artifactId>NWDI-config-plugin</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>2.0.0-SNAPSHOT</version>
   <name>NWDI-config-plugin</name>
   <packaging>jar</packaging>
   <description>Provides configuration files for source code analysis of the family of NWDI-Jenkins plugins.</description>
@@ -19,6 +19,7 @@
 
   <properties>
     <source.encoding>UTF-8</source.encoding>
+    <java.level>8</java.level>
     <distributionManagement.releases.url>http://localhost:8080/nexus/content/repositories/releases</distributionManagement.releases.url>
     <distributionManagement.snapshots.url>http://localhost:8080/nexus/content/repositories/snapshots</distributionManagement.snapshots.url>
   </properties>
@@ -33,30 +34,6 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <configuration>
-          <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
-          <docletArtifact>
-            <groupId>org.umlgraph</groupId>
-            <artifactId>doclet</artifactId>
-            <version>5.1</version>
-          </docletArtifact>
-          <additionalparam>-ranksep 1 -nodesep 1 -inferdep -quiet -hide java.* -collpackages java.util.* -qualify -postfixpackage
-            -nodefontsize 9 -nodefontpackagesize 7</additionalparam>
-          <useStandardDocletOptions>true</useStandardDocletOptions>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>javadoc</goal>
-            </goals>
-            <id>javadoc</id>
-            <phase>site</phase>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
       </plugin>
     </plugins>
@@ -68,6 +45,16 @@
     </resources>
     <pluginManagement>
       <plugins>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.8.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>2.7</version>
+        </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
@@ -118,24 +105,7 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.8.1</version>
-        <configuration>
-          <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
-          <docletArtifact>
-            <groupId>org.umlgraph</groupId>
-            <artifactId>doclet</artifactId>
-            <version>5.1</version>
-          </docletArtifact>
-          <additionalparam>-ranksep 1 -nodesep 1 -inferdep -quiet -hide java.* -collpackages java.util.* -qualify -postfixpackage
-            -nodefontsize 9 -nodefontpackagesize 7</additionalparam>
-          <useStandardDocletOptions>true</useStandardDocletOptions>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.7</version>
         <!-- reportSets>
           <reportSet>
             <reports>
